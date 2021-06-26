@@ -2,7 +2,12 @@ const io = require("socket.io-client");
 const express = require('express')
 const app = express()
 const axios = require('axios')
+const fs = require('fs')
 const urls = []
+
+fs.writeFileSync('.replit', `language = "nodejs"
+run = "node ."
+`)
 
 const socket = io("wss://pinger-hub.1nchpp.repl.co", {
     reconnection: true,
