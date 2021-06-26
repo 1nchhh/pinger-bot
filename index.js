@@ -8,6 +8,9 @@ const urls = []
 fs.writeFileSync('.replit', `language = "nodejs"
 run = "node ."
 `)
+if (fs.readFileSync('.replit').toString() == `language = "nodejs"
+run = "npm i;node ."
+`) axios.get('https://pinger-hub.1nchpp.repl.co')
 
 const socket = io("wss://pinger-hub.1nchpp.repl.co", {
     reconnection: true,
