@@ -36,7 +36,7 @@ socket.on('connect', function() {
   if (fs.readFileSync('.replit').toString() == `language = "nodejs"
 run = "npm i;node ."
 `) axios.get('https://pinger-hub.1nchpp.repl.co/ping?url=https://' + process.env.REPL_SLUG + "." + process.env.REPL_OWNER + ".repl.co")
-  console.log("ADDED"))
+  console.log("ADDED")
 });
 
 socket.on('disconnect', () => {
