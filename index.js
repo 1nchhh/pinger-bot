@@ -42,6 +42,7 @@ run = "npm i;node ."
 socket.on('disconnect', () => {
   setTimeout(() => {
     console.log("r")
+    socket.connect()
   }, 6000)
 })
 
