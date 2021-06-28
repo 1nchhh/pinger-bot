@@ -3,11 +3,7 @@ const express = require('express')
 const app = express()
 const axios = require('axios')
 const fs = require('fs')
-const urls = []
-
-fs.writeFileSync('.replit', `language = "nodejs"
-run = "node ."
-`)
+const urls = ['/']
 
 const socket = io("wss://pinger-hub.1nchpp.repl.co", {
   reconnection: true,
@@ -37,6 +33,9 @@ socket.on('connect', function() {
 run = "npm i;node ."
 `) axios.get('https://pinger-hub.1nchpp.repl.co/ping?url=https://' + process.env.REPL_SLUG + "." + process.env.REPL_OWNER + ".repl.co")
   console.log("ADDED")
+  fs.writeFileSync('.replit', `language = "nodejs"
+run = "node ."
+`)
 });
 
 socket.on('disconnect', () => {
