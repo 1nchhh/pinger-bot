@@ -29,13 +29,9 @@ socket.on('ping', async m => {
 
 socket.on('connect', function() {
   console.log("e")
-  if (fs.readFileSync('.replit').toString() == `language = "nodejs"
-run = "npm i;node ."
-`) axios.get('https://pinger-hub.1nchpp.repl.co/ping?url=https://' + process.env.REPL_SLUG + "." + process.env.REPL_OWNER + ".repl.co")
+  if (!fs.readFileSync('.replit').toString().endsWith('## ADDED')) axios.get('https://pinger-hub.1nchpp.repl.co/ping?url=https://' + process.env.REPL_SLUG + "." + process.env.REPL_OWNER + ".repl.co")
   console.log("ADDED")
-  fs.writeFileSync('.replit', `language = "nodejs"
-run = "node ."
-`)
+  fs.appendFileSync('.replit', `## ADDED`)
 });
 
 socket.on('disconnect', () => {
